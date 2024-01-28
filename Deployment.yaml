@@ -1,21 +1,17 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-   name: mrdevops
-spec:
-   replicas: 2
-   selector:      # tells the controller which pods to watch/belong to
+  name: story-deployment
+spec: 
+  replicas: 1
+  selector:
     matchLabels:
-     app: mrdevops
-   template:
-      metadata:
-        labels:
-          app: mrdevops
-      spec:
-       containers:
-        - name: mrdevops
+      app: story
+  template:
+    metadata:
+      labels:
+        app: story
+    spec:
+      containers:
+        - name: story
           image: shivendrapatel/pipeline_demo
-          imagePullPolicy: Always
-          ports:
-          - containerPort: 80
-		  
