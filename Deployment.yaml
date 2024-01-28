@@ -1,5 +1,5 @@
-kind: Deployment
 apiVersion: apps/v1
+kind: Deployment
 metadata:
    name: mrdevops
 spec:
@@ -14,7 +14,7 @@ spec:
       spec:
        containers:
         - name: mrdevops
-          image: docker push shivendrapatel/pipeline_demo
+          image: shivendrapatel/pipeline_demo
           imagePullPolicy: Always
           ports:
           - containerPort: 80
